@@ -13,3 +13,9 @@ Created a .env.sample for future Reference
 Stringyfied in conf file for fool-proof working
 Created basic utility components & pages
 Wrote appwrite Services in appwrite folder
+
+- Problems faced:-
+placed .env in src (silly)
+used nextui for components which block tailwind styling
+went to shadcn but there was too limited styles
+went back to nextui fixing the issue by tailwind.config content section
