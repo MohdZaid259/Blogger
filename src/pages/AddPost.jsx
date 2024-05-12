@@ -1,8 +1,11 @@
 import React from 'react'
+import service from '../Appwrite/config'
 
 function AddPost() {
   return (
-    <div>AddPost</div>
+    <div>
+      
+    </div>
   )
 }
 
