@@ -3,6 +3,9 @@ import {Link} from 'react-router-dom'
 import {useForm} from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
+import { login as authLogin } from '../Store/authSlice'
+import {Input} from './index'
+import authService from '../Appwrite/auth'
 
 function LogIn() {
   const {register,handleSubmit} = useForm()
@@ -10,10 +13,18 @@ function LogIn() {
   const navigate=useNavigate()
   const dispatch=useDispatch()
 
-  const submit=(data)=>{
-    setError('')
-    console.log(data)
-    navigate('/')
+  const submit = async(data)=>{
+    try {
+      const session = await authService.logIn(data) 
+      if (session) {
+        const user= await authService.currentUser()
+          user ? dispatch(authLogin(user)) : null
+          navigate('/')
+      }
+      setError('')
+    } catch (error) {
+      setError(error)
+    }
   }
   return (
     <form onSubmit={handleSubmit(submit)}>
@@ -25,12 +36,8 @@ function LogIn() {
           </span>
           {error && <span className='text-red-500'>{error}</span>}
           <div className='flex flex-col gap-1 p-5'>
-            <label htmlFor="Name">Full Name</label>
-            <input className='border rounded p-1' {...register('name',{required:true})} type="text" />
-            <label htmlFor="Email">Email</label>
-            <input className='border rounded p-1' {...register('email',{required:true})} type="text" />
-            <label htmlFor="Password">Password</label>
-            <input className='border rounded p-1' {...register('password',{required:true})} type="password" />
+            <Input type="text" label='Email' className='border rounded p-1' {...register('email',{required:true})}/>
+            <Input type="password" label='Password' className='border rounded p-1' {...register('password',{required:true})}/>
             <button className='w-20 m-auto bg-blue-500 mt-4 p-1 rounded-md'>Submit</button>
           </div>
         </div>

@@ -1,8 +1,9 @@
 import React from "react";
-import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Button, link} from "@nextui-org/react";
+import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Button} from "@nextui-org/react";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { LogOut } from "../index";
 
 export default function Header() {
   const authStatus=useSelector(state=>state.auth.status)
@@ -26,9 +27,7 @@ export default function Header() {
           </NavbarItem>
         </NavbarContent>
         <NavbarContent justify="end">
-            <Button color="primary" variant="ghost">
-              Logout
-            </Button>
+        <LogOut/>
         </NavbarContent>
       </Navbar>
     );

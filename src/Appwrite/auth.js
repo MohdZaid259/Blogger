@@ -1,5 +1,5 @@
 import { Client, Account, ID } from "appwrite";
-import conf from "@/conf/conf";
+import conf from "../conf/conf";
 
 class AuthService{
   client = new Client();
@@ -14,6 +14,7 @@ class AuthService{
 
   async signUp({email,password,name}){
     try {
+      console.log(email,password,name)
       const user = await this.account.create(
         ID.unique(),
         email,
@@ -34,6 +35,7 @@ class AuthService{
         email,
         password
       )
+      return session
     } catch (error) {
       console.log('Appwrite service :: logIn :: error',error)
     }

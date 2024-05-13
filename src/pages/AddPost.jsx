@@ -1,10 +1,10 @@
 import React from 'react'
-import service from '../Appwrite/config'
+import { PostForm } from '../components/index'
 
 function AddPost() {
   return (
     <div>
-      
+      <PostForm/>
     </div>
   )
 }

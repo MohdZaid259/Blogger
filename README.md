@@ -26,6 +26,8 @@ why .env.sample
 why file upload when we've post upload
 use of htmlFor ??
 <form onSubmit={()=>handleSubmit(submit)}> why not like this
+sender compo or receiver compo dono me destructure krna hota h ki sirf ek me?
+input compo have forward-ref but useRef is used nowhere
 
 - Changes :-
 external component library
