@@ -7,6 +7,7 @@ import Select from "./Select";
 import LogIn from "./LogIn";
 import SignUp from "./SignUp";
 import LogOut from "./LogOut";
+import RTE from "./RTE";
 
 export {
 PostCard,
@@ -17,5 +18,6 @@ Input,
 Select,
 LogIn,
 LogOut,
-SignUp
+SignUp,
+RTE
 }

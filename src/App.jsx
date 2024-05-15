@@ -7,10 +7,10 @@ function App() {
 
   return (
     <>
-    <Header/>
-    {/* <PostForm/> */}
-    <Outlet/>
-    <Footer/>
+    {/* <Header/> */}
+    <PostForm/>
+    {/* <Outlet/>
+    <Footer/> */}
     </>
   )
 }
