@@ -46,6 +46,7 @@ export default function Header() {
             <Button onClick={()=>navigate('/signup')} color="primary" variant="ghost">
               SignUp
             </Button>
+            <LogOut/>
           </NavbarItem>
         </NavbarContent>
       </Navbar>

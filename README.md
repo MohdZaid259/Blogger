@@ -28,6 +28,7 @@ use of htmlFor ??
 <form onSubmit={()=>handleSubmit(submit)}> why not like this
 sender compo or receiver compo dono me destructure krna hota h ki sirf ek me?
 input compo have forward-ref but useRef is used nowhere
+post.$id === slug (where?)
 
 - Changes :-
 external component library
