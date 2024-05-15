@@ -10,16 +10,14 @@ function Home() {
   useEffect(()=>{
     service.getAllPost()
       .then((data)=>{
-        // console.log(data)
-        setPost(data)
+        setPost(data.documents)
       })
   },[])
 
   return authStatus ? <>
-    {post.map((post)=>(
-      <div key={post.$id}>
-        {/* <PostCard {...post}/> */}
-        <div>test</div>
+    {post.map((item)=>(
+      <div key={item}>
+        <PostCard {...item}/>
       </div>
     ))}
   </> : <span className='flex justify-center text-xl font-bold '>Login to Read Posts !!!</span> 

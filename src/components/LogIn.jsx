@@ -30,6 +30,8 @@ function LogIn() {
       setError(error)
     }
   }
+  console.log(useSelector(state=>state.auth.status)) //checking authStatus
+
   return (
     <form onSubmit={handleSubmit(submit)}>
       <div className='flex justify-center items-center'>

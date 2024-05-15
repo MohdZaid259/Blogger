@@ -1,5 +1,5 @@
-import React from 'react'
-import { useForm } from "react-hook-form";
+import React, { useCallback, useEffect } from 'react'
+import { get, useForm } from "react-hook-form";
 import { Button } from '@nextui-org/react';
 import service from '../Appwrite/config'
 import {Input,RTE} from '../components/index'
@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 function PostForm({post}) {
-  const { register, handleSubmit, watch, control } =
+  const { register, handleSubmit, watch, control, setValue, getValues } =
     useForm({
       defaultValues: {
         title: post?.title || "",
@@ -40,13 +40,34 @@ function PostForm({post}) {
     }
   };
 
+  const slugTransform=useCallback((value)=>{
+    if(value && typeof(value)==='string'){
+      const slug = value.toLowerCase().replace(/ /g,'-')
+      return slug
+    } return ''
+  },[])
+
+  useEffect(()=>{
+    const subscribe = watch((value,{name})=>{
+      if(name==='title'){
+        setValue('slug',slugTransform(value.title))
+      }
+    })
+    return ()=>{
+      subscribe.unsubscribe()
+    }
+  },[watch,slugTransform,setValue])
+
   return (
     <div className='w-full max-w-7xl mx-auto p-5'>
       <form onSubmit={handleSubmit(submit)} className='flex flex-wrap"'>
         <div className="w-full px-2 flex flex-col">
           <Input className='border rounded p-1 mb-3' label='Title' type="text" {...register('title',{required:true})} />
-          <Input className='border rounded p-1 mb-3' label='Slug' type="text" {...register('slug',{required:true})} />
-          <RTE control={control} label='Content' name='Content'/>
+          <Input className='border rounded p-1 mb-3' label='Slug' type="text" 
+            onInput={(e)=>{
+              setValue('slug',slugTransform(e.currentTarget.value))
+            }} {...register('slug',{required:true})} />
+          <RTE control={control} label='Content' name='Content' defaultValue={getValues('content')}/>
           <Input className='border rounded p-1 mb-3' label='Image' type='file' {...register('image',{required:true})}/>
           {post && <img src={post.image} alt={post.title} className='rounded-lg'/>}
           <Button color='primary'>{post?'Update':'Publish'}</Button>

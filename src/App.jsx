@@ -11,7 +11,7 @@ function App() {
     {/* <PostForm/> */}
 
     <Outlet/>
-    <Footer/>
+    {/* <Footer/> */}
     </>
   )
 }

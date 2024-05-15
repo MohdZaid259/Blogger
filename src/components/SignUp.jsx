@@ -14,7 +14,7 @@ function SignUp() {
     console.log(data)
     try {
       const user = await authService.signUp(data)
-      navigate('/login')
+      if(user) navigate('/login')
     setError('')
     } catch (error) {
       setError(error)
