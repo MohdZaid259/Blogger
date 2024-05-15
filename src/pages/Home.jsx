@@ -18,7 +18,8 @@ function Home() {
   return authStatus ? <>
     {post.map((post)=>(
       <div key={post.$id}>
-        <PostCard {...post}/>
+        {/* <PostCard {...post}/> */}
+        <div>test</div>
       </div>
     ))}
   </> : <span className='flex justify-center text-xl font-bold '>Login to Read Posts !!!</span> 

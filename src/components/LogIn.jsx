@@ -6,20 +6,24 @@ import { useDispatch } from 'react-redux'
 import { login as authLogin } from '../Store/authSlice'
 import {Input} from './index'
 import authService from '../Appwrite/auth'
+import { useSelector } from 'react-redux'
 
 function LogIn() {
   const {register,handleSubmit} = useForm()
   const [error,setError]=useState('')
   const navigate=useNavigate()
   const dispatch=useDispatch()
+  console.log(useSelector(state=>state.auth.status)) //checking authStatus
 
   const submit = async(data)=>{
     try {
+      // await authService.logOut()
+      // console.log('logout done')
       const session = await authService.logIn(data) 
       if (session) {
         const user= await authService.currentUser()
-          user ? dispatch(authLogin(user)) : null
-          navigate('/')
+        user ? dispatch(authLogin(user)) : null
+        navigate('/')
       }
       setError('')
     } catch (error) {
