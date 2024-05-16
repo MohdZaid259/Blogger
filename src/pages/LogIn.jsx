@@ -1,9 +1,13 @@
 import React from 'react'
 import {LogIn as LogInComponent} from '../components/index'
+import { Container } from '../components/index'
 
 function LogIn() {
   return (
-    <LogInComponent/>
+    <Container>
+      <LogInComponent/>
+    </Container>
+    
   )
 }
 

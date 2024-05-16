@@ -29,6 +29,7 @@ use of htmlFor ??
 sender compo or receiver compo dono me destructure krna hota h ki sirf ek me?
 input compo have forward-ref but useRef is used nowhere
 post.$id === slug (where?)
+content html-Id issue
 
 - Changes :-
 external component library
@@ -38,3 +39,4 @@ new approach in header file
 
 - Todo :-
 optimise the header file
+make the image not required in appwrite

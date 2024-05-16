@@ -15,7 +15,7 @@ function RTE({
   const id=useId()
 
   return (
-    <div className='w-1/2'>
+    <div className=''>
       {label  && <label htmlFor={id} className=''>{label}</label>}    
       <Controller
       name={name || 'content'}

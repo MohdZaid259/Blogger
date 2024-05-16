@@ -8,6 +8,7 @@ import LogIn from "./LogIn";
 import SignUp from "./SignUp";
 import LogOut from "./LogOut";
 import RTE from "./RTE";
+import Container from "./Container/Container";
 
 export {
 PostCard,
@@ -19,5 +20,6 @@ Select,
 LogIn,
 LogOut,
 SignUp,
-RTE
+RTE,
+Container
 }

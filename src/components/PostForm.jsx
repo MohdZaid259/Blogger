@@ -19,6 +19,7 @@ function PostForm({post}) {
   const userData = useSelector((state) => state.auth.userData);
 
   const submit = async (data) => {
+    console.log("posting...")
     if (post) {
       const file = data.image[0] ? await service.uploadFile(data.image[0]) : null
       file ? service.deleteFile(post.image) : null
@@ -26,16 +27,18 @@ function PostForm({post}) {
         ...data,
         image: file ? file.$id : null,
       })
-      dbPost? navigate(`/${dbPost.$id}`) : null
+      dbPost? navigate(`/post/${dbPost.$id}`) : null
     } else {
       const file = data.image[0] ? await service.uploadFile(data.image[0]) : null;
       if (file) {
-        data.featuredImage = file.$id;
-        const dbPost = await appwriteservice.createPost({ // slug missing
+        data.image = file.$id;
+        console.log(data) 
+        const dbPost = await service.createPost({
           ...data,
           userId: userData.$id,
         });
-        dbPost? navigate(`/${dbPost.$id}`) : null
+        console.log(dbPost)
+        dbPost? navigate(`/post/${dbPost.$id}`) : null
       }
     }
   };
@@ -59,18 +62,18 @@ function PostForm({post}) {
   },[watch,slugTransform,setValue])
 
   return (
-    <div className='w-full max-w-7xl mx-auto p-5'>
-      <form onSubmit={handleSubmit(submit)} className='flex flex-wrap"'>
+    <div className='w-full max-w-3xl mx-auto px-5 pb-5'>
+      <form onSubmit={handleSubmit(submit)}>
         <div className="w-full px-2 flex flex-col">
           <Input className='border rounded p-1 mb-3' label='Title' type="text" {...register('title',{required:true})} />
-          <Input className='border rounded p-1 mb-3' label='Slug' type="text" 
+          <Input className='border rounded p-1 mb-3 bg-inherit' disabled='disabled' label='Slug' type="text" 
             onInput={(e)=>{
               setValue('slug',slugTransform(e.currentTarget.value))
             }} {...register('slug',{required:true})} />
           <RTE control={control} label='Content' name='Content' defaultValue={getValues('content')}/>
           <Input className='border rounded p-1 mb-3' label='Image' type='file' {...register('image',{required:true})}/>
           {post && <img src={post.image} alt={post.title} className='rounded-lg'/>}
-          <Button color='primary'>{post?'Update':'Publish'}</Button>
+          <Button className='font-bold text-lg' type='submit' color='primary'>{post?'Update':'Publish'}</Button>
         </div>
       </form>
     </div>

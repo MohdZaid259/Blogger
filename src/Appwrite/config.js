@@ -14,7 +14,7 @@ class Service{
     this.storage = new Storage(this.client)
   }
 
-  async createPost(slug,{title,content,image,userId}){
+  async createPost({slug,title,content,image,userId}){
     try {
       await this.databases.createDocument(
         conf.appwriteDatabaseId,

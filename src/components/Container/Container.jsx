@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { Children } from 'react'
 
-function Container() {
+function Container({children}) {
   return (
-    <div>Container</div>
+    <div className='min-h-full'>{children}</div>
   )
 }
 

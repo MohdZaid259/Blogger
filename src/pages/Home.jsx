@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import service from '../Appwrite/config'
 import {PostCard} from '../components/index'
+import { Container } from '../components/index'
 
 function Home() {
   const [post,setPost]=useState([])
@@ -15,11 +16,13 @@ function Home() {
   },[])
 
   return authStatus ? <>
+  <Container>
     {post.map((item)=>(
       <div key={item}>
         <PostCard {...item}/>
       </div>
     ))}
+  </Container>
   </> : <span className='flex justify-center text-xl font-bold '>Login to Read Posts !!!</span> 
 }
 
