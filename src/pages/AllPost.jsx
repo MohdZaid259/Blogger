@@ -15,32 +15,15 @@ function AllPost() {
     })
   },[])
 
-  // if(post.length===0){
-  //   return <div className='text-center text-lg font-bold'>No posts yet!</div>
-  // }else{
-  //   return (
-  //     <Container>
-  //       {post.map((item)=>(
-  //         <div key={item.$id}>
-  //           <PostCard {...post}/>
-  //         </div>
-  //       ))}
-  //     </Container>
-  //   )
-  // }
-  return (
-    <div className='w-full py-8'>
+    return (
       <Container>
-        <div className='flex flex-wrap'>
-          {post.map((post)=>(
-            <div key={post.$id} className='p-2 w-1/4'>
-              <PostCard {...post}/>
-            </div>
-          ))}
-        </div>
+        {post.map((item)=>(
+          <div key={item.$id}>
+            <PostCard {...post}/>
+          </div>
+        ))}
       </Container>
-    </div>
-  )
+    )
 }
 
 export default AllPost
