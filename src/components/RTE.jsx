@@ -5,7 +5,7 @@ import { Controller } from 'react-hook-form';
 import { useId } from 'react';
 
 function RTE({
-  name,// why name
+  name,
   label,
   control,
   defaultValue='Write inhere...',
@@ -23,6 +23,7 @@ function RTE({
       render={({field:{onChange}})=>( // onchange never read
         <Editor
         id={id}
+        initialValue={defaultValue}
         apiKey='ohiyqf932zaevp1kwrzetil36x86zcddhzj90j7qlwc6e4fg'
         init={{
           menubar: true,

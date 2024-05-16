@@ -16,7 +16,7 @@ class Service{
 
   async createPost({slug,title,content,image,userId}){
     try {
-      await this.databases.createDocument(
+      return await this.databases.createDocument(
         conf.appwriteDatabaseId,
         conf.appwriteCollectionId,
         slug,
@@ -34,7 +34,7 @@ class Service{
 
   async updatePost(slug,{title,content,image}){
     try {
-      await this.databases.updateDocument(
+      return await this.databases.updateDocument(
         conf.appwriteDatabaseId,
         conf.appwriteCollectionId,
         slug,
@@ -51,7 +51,7 @@ class Service{
 
   async deletePost(slug){
     try {
-      return await this.databases.deleteDocument(
+      await this.databases.deleteDocument(
         conf.appwriteDatabaseId,
         conf.appwriteCollectionId,
         slug

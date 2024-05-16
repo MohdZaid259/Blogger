@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux'
 import service from '../Appwrite/config'
 import { Container } from '../components/index'
 import { useParams } from 'react-router-dom'
+import parse from 'html-react-parser'
 
 function Post({post}) {
   const navigate=useNavigate()
@@ -29,7 +30,7 @@ function Post({post}) {
       <Button className='absolute right-5 top-5' onClick={deletePost} variant='solid' bgColor="bg-green-500">Delete</Button>
       </>}
       <h1 className="text-2xl font-bold">{post.title}</h1>
-      <p>{post.content}</p>
+      <p>{parse(post.content)}</p>
     </div>
     </Container>
   )
