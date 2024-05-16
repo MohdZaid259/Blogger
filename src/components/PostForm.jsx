@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect } from 'react'
-import { get, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { Button } from '@nextui-org/react';
 import service from '../Appwrite/config'
 import {Input,RTE} from '../components/index'
@@ -70,7 +70,7 @@ function PostForm({post}) {
             onInput={(e)=>{
               setValue('slug',slugTransform(e.currentTarget.value))
             }} {...register('slug',{required:true})} />
-          <RTE control={control} label='Content' name='Content' defaultValue={getValues('content')}/>
+          <RTE control={control} label='Content' name='content' defaultValue={getValues('content')}/>
           <Input className='border rounded p-1 mb-3' label='Image' type='file' {...register('image',{required:true})}/>
           {post && <img src={post.image} alt={post.title} className='rounded-lg'/>}
           <Button className='font-bold text-lg' type='submit' color='primary'>{post?'Update':'Publish'}</Button>

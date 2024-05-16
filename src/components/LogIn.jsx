@@ -17,8 +17,6 @@ function LogIn() {
 
   const submit = async(data)=>{
     try {
-      // await authService.logOut()
-      // console.log('logout done')
       const session = await authService.logIn(data) 
       if (session) {
         const user= await authService.currentUser()
