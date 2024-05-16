@@ -5,6 +5,7 @@ import { Container } from '../components/index'
 
 function AllPost() {
   const [post,setPost]=useState([])
+
   useEffect(()=>{
     service.getAllPost()
     .then((posts)=>{
@@ -14,21 +15,32 @@ function AllPost() {
     })
   },[])
 
-  if(post.length===0){
-    return <div className='text-center text-lg font-bold'>No posts yet!</div>
-  }else{
-    return (
+  // if(post.length===0){
+  //   return <div className='text-center text-lg font-bold'>No posts yet!</div>
+  // }else{
+  //   return (
+  //     <Container>
+  //       {post.map((item)=>(
+  //         <div key={item.$id}>
+  //           <PostCard {...post}/>
+  //         </div>
+  //       ))}
+  //     </Container>
+  //   )
+  // }
+  return (
+    <div className='w-full py-8'>
       <Container>
-      <div>
-        {post.map((item)=>(
-          <div key={item}>
-            <PostCard {...post}/>
-          </div>
-        ))}
-      </div>
+        <div className='flex flex-wrap'>
+          {post.map((post)=>(
+            <div key={post.$id} className='p-2 w-1/4'>
+              <PostCard {...post}/>
+            </div>
+          ))}
+        </div>
       </Container>
-    )
-  }
+    </div>
+  )
 }
 
 export default AllPost

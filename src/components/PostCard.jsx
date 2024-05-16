@@ -3,12 +3,12 @@ import {Card, CardBody, CardFooter, Image} from "@nextui-org/react";
 import service from '../Appwrite/config'
 import { useNavigate } from "react-router-dom";
 
-export default function PostCard({$id,title,image}) {
+function PostCard({$id,title,image}) {
   const navigate=useNavigate()
   
   return (
-    <div className="gap-2 grid grid-cols-2 sm:grid-cols-4">
-        <Card shadow="sm" key={$id} isPressable onPress={()=>navigate(`/post/${$id}`)}>
+    <div className="gap-2">
+        <Card className="border" shadow="sm" key={$id} isPressable onPress={()=>navigate(`/post/${$id}`)}>
           <CardBody className="overflow-visible p-0">
             <Image
               shadow="sm"
@@ -26,3 +26,5 @@ export default function PostCard({$id,title,image}) {
     </div>
   );
 }
+
+export default PostCard

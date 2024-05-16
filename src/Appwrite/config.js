@@ -110,7 +110,7 @@ class Service{
 
   getFilePreview(fileId){
     try {
-      this.storage.getFilePreview(
+      return this.storage.getFilePreview(
         conf.appwriteBucketId,
         fileId
       )

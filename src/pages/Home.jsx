@@ -10,15 +10,15 @@ function Home() {
   
   useEffect(()=>{
     service.getAllPost()
-      .then((data)=>{
-        setPost(data.documents)
-      })
+    .then((data)=>{
+      setPost(data.documents)
+    })
   },[])
 
-  return authStatus ? <>
+return authStatus ? <>
   <Container>
     {post.map((item)=>(
-      <div key={item}>
+      <div key={item.$id}>
         <PostCard {...item}/>
       </div>
     ))}

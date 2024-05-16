@@ -2,7 +2,7 @@ import React, { Children } from 'react'
 
 function Container({children}) {
   return (
-    <div className='min-h-full'>{children}</div>
+    <div className='flex flex-wrap gap-5 p-5'>{children}</div>
   )
 }
 
