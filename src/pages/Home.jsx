@@ -12,6 +12,8 @@ function Home() {
     service.getAllPost()
     .then((data)=>{
       setPost(data.documents)
+    }).catch((err)=>{
+      throw err
     })
   },[])
 

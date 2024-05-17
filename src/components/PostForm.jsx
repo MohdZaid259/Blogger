@@ -21,18 +21,19 @@ function PostForm({post}) {
   const submit = async (data) => {
     console.log("posting...")
     if (post) {
-      const file = data.image[0] ? await service.uploadFile(data.image[0]) : null
+      const file = data.image[0] ? await service.uploadFile(data.image[0]) : 
       file ? service.deleteFile(post.image) : null
       const dbPost = await service.updatePost(post.$id, {
         ...data,
         image: file ? file.$id : null,
       })
+      console.log('dbpost',dbPost)
       dbPost? navigate(`/post/${dbPost.$id}`) : null
+      
     } else {
       const file = data.image[0] ? await service.uploadFile(data.image[0]) : null;
       if (file) {
         data.image = file.$id;
-        console.log(data) 
         const dbPost = await service.createPost({
           ...data,
           userId: userData.$id,

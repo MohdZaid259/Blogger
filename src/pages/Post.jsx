@@ -23,7 +23,7 @@ function Post() {
     } else navigate('/')
   },[slug,navigate])
 
-// ------------------------------------------------- using async-await
+  // ------------------------------------------------- using async-await
 //   useEffect(()=>{
 //     const fetch=async()=>{
 //       if(slug){
@@ -47,14 +47,18 @@ function Post() {
 
   return (
     <Container>
-      <div className='border p-5 border-red-500'>
+      <div className='border rounded-lg w-full p-5 grid grid-cols-2'>
+        <div>
+        <h1 className="text-2xl ml-5 font-bold">{post.title}</h1>
+        <p className='p-5'>{post.content? parse(post.content) :''}</p>
+        </div>
+        <div>
+        <img className='rounded-lg' src={service.getFilePreview(post.image)} alt={post.title} />
         {isAuther && <>
-        <Link to={`/editpost/${post.$id}`}><Button className=' absolute right-16 bg-green-500 ' variant='solid' bgColor="bg-green-500">Edit</Button></Link>
-        <Button className='absolute right-10 bg-red-500' onClick={deletePost} variant='solid' bgColor="bg-green-500">Delete</Button>
+        <Link to={`/editpost/${post.$id}`}><Button className='rounded-md bg-black absolute top-16 right-32 text-green-400 border-2 border-green-500 hover:bg-green-800 hover:text-white' variant='solid'>Edit</Button></Link>
+        <Button className='rounded-md absolute top-16 right-10 bg-black border-2 text-red-400 border-red-400 hover:bg-red-700 hover:text-white' onClick={deletePost} variant='solid'>Delete</Button>
         </>}
-        <h1 className=" text-2xl font-bold">{post.title}</h1>
-        <p className=''>{parse(post.content)}</p>
-        <img className='w-1/2 float-right' src={service.getFilePreview(post.image)} alt={post.title} />
+        </div>
       </div>
     </Container>
   )

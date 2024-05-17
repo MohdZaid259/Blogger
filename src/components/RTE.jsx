@@ -20,7 +20,7 @@ function RTE({
       <Controller
       name={name || 'content'}
       control={control} 
-      render={({field:{onChange}})=>( // onchange never read
+      render={({field:{onChange}})=>(
         <Editor
         id={id}
         initialValue={defaultValue}
@@ -31,7 +31,7 @@ function RTE({
         }}
         className={`p-2 ${className}`}
         {...props}
-        onEditorChange={onchange}
+        onEditorChange={onChange}
         />
       )}
       />

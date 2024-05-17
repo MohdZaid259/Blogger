@@ -43,3 +43,4 @@ optimise the header file
 make the image not required in appwrite
 store for posts
 useEffect isn't good for post.jsx
+click postimage to see in full screen
