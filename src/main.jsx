@@ -6,7 +6,6 @@ import { NextUIProvider } from "@nextui-org/react";
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./Store/store";
-import AllPost from "./pages/AllPost";
 import AddPost from "./pages/AddPost";
 import LogIn from "./pages/LogIn";
 import SignUp from "./pages/SignUp";
@@ -19,7 +18,6 @@ const router=createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App/>}>
       <Route exact path="" element={<Home/>}/>
-      <Route path="allpost" element={<AllPost/>}/>
       <Route path="addpost" element={<AddPost/>}/>
       <Route path="editpost/:slug" element={<EditPost/>}/>
       <Route path="mypost" element={<MyPost/>}/>

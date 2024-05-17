@@ -22,11 +22,11 @@ function App() {
   },[])
 
     return (
-        <div className=''>
+        <>
         <Header/>
         {loading ? <div className='text-lg font-bold text-center'>Loading...</div> : <Outlet/>}
         <Footer/>
-        </div>
+        </>
   )
 }
 

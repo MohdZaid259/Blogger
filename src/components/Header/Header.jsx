@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { LogOut } from "../index";
+import logo from '../../Media/logo.jpeg'
 
 export default function Header() {
   const authStatus=useSelector(state=>state.auth.status)
@@ -13,6 +14,7 @@ export default function Header() {
     return (
       <Navbar>
         <NavbarBrand>
+          <img className="w-7 mr-2 rounded-full" src={logo} alt="" />
           <p className="font-bold text-inherit">Custom Blog</p>
         </NavbarBrand>
         <NavbarContent className="sm:flex gap-4" justify="center">
@@ -24,9 +26,6 @@ export default function Header() {
           </NavbarItem>
           <NavbarItem>
             <NavLink to='/addpost' className={({isActive})=>isActive?'text-blue-500':''}>Add Post</NavLink>
-          </NavbarItem>
-          <NavbarItem>
-            <NavLink to='/allpost' className={({isActive})=>isActive?'text-blue-500':''}>All Posts</NavLink>
           </NavbarItem>
         </NavbarContent>
         <NavbarContent justify="end">
