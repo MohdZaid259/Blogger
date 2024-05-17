@@ -15,12 +15,12 @@ function PostCard({$id,title,image}) {
               radius="lg"
               width="100%"
               alt={title}
-              className="w-full object-cover h-[140px]"
+              className="w-full object-cover rounded-none h-[140px]"
               src={service.getFilePreview(image)}
             />
           </CardBody>
           <CardFooter className="text-small justify-between">
-            <b>{title}</b>
+            <b className="text-lg">{title}</b>
           </CardFooter>
         </Card>
     </div>

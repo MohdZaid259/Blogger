@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { useForm } from "react-hook-form";
 import { Button } from '@nextui-org/react';
 import service from '../Appwrite/config'
@@ -19,7 +19,6 @@ function PostForm({post}) {
   const userData = useSelector((state) => state.auth.userData);
 
   const submit = async (data) => {
-    console.log("posting...")
     if (post) {
       const file = data.image[0] ? await service.uploadFile(data.image[0]) : 
       file ? service.deleteFile(post.image) : null
@@ -51,7 +50,8 @@ function PostForm({post}) {
     } return ''
   },[])
 
-  useEffect(()=>{
+  useEffect(()=>{ // realtime replacement
+    setValue('slug',slugTransform(getValues('title')))
     const subscribe = watch((value,{name})=>{
       if(name==='title'){
         setValue('slug',slugTransform(value.title))
@@ -68,9 +68,7 @@ function PostForm({post}) {
         <div className="w-full px-2 flex flex-col">
           <Input className='border rounded p-1 mb-3' label='Title' type="text" {...register('title',{required:true})} />
           <Input className='border rounded p-1 mb-3 bg-inherit' disabled='disabled' label='Slug' type="text" 
-            onInput={(e)=>{
-              setValue('slug',slugTransform(e.currentTarget.value))
-            }} {...register('slug',{required:true})} />
+            {...register('slug',{required:true})} />
           <RTE control={control} label='Content' name='content' defaultValue={getValues('content')}/>
           <Input className='border rounded p-1 mb-3' label='Image' type='file' {...register('image',{required:true})}/>
           {post && <img src={post.image} alt={post.title} className='rounded-lg'/>}

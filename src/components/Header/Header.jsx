@@ -20,10 +20,13 @@ export default function Header() {
             <NavLink to='/' className={({isActive})=>isActive?'text-blue-500':''}>Home</NavLink>
           </NavbarItem>
           <NavbarItem>
+            <NavLink to='/mypost' className={({isActive})=>isActive?'text-blue-500':''}>My Posts</NavLink>
+          </NavbarItem>
+          <NavbarItem>
             <NavLink to='/addpost' className={({isActive})=>isActive?'text-blue-500':''}>Add Post</NavLink>
           </NavbarItem>
           <NavbarItem>
-            <NavLink to='/allpost' className={({isActive})=>isActive?'text-blue-500':''}>All Post</NavLink>
+            <NavLink to='/allpost' className={({isActive})=>isActive?'text-blue-500':''}>All Posts</NavLink>
           </NavbarItem>
         </NavbarContent>
         <NavbarContent justify="end">

@@ -8,18 +8,19 @@ function AllPost() {
 
   useEffect(()=>{
     service.getAllPost()
-    .then((posts)=>{
-      posts? setPost(posts.documents):null
-    }).finally(()=>{
-      console.log('all posts fetched!')
+    .then((data)=>{
+      setPost(data.documents)
+    }).catch((err)=>{
+      throw err
     })
   },[])
+  console.log(post)
 
     return (
       <Container>
         {post.map((item)=>(
           <div key={item.$id}>
-            <PostCard {...post}/>
+            <PostCard {...item}/>
           </div>
         ))}
       </Container>

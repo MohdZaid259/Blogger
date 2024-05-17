@@ -13,6 +13,7 @@ import SignUp from "./pages/SignUp";
 import Home from "./pages/Home";
 import EditPost from "./pages/EditPost";
 import Post from './pages/Post';
+import MyPost from './pages/MyPost'
 
 const router=createBrowserRouter(
   createRoutesFromElements(
@@ -21,6 +22,7 @@ const router=createBrowserRouter(
       <Route path="allpost" element={<AllPost/>}/>
       <Route path="addpost" element={<AddPost/>}/>
       <Route path="editpost/:slug" element={<EditPost/>}/>
+      <Route path="mypost" element={<MyPost/>}/>
       <Route path="post/:slug" element={<Post/>}/>
       <Route path="login" element={<LogIn/>}/>
       <Route path="signup" element={<SignUp/>}/>

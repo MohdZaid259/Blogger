@@ -21,5 +21,5 @@ LogIn,
 LogOut,
 SignUp,
 RTE,
-Container
+Container,
 }

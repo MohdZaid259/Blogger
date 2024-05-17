@@ -44,3 +44,6 @@ make the image not required in appwrite
 store for posts
 useEffect isn't good for post.jsx
 click postimage to see in full screen
+post should contain author name
+my post 
+all post - with authors
