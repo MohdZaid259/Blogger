@@ -37,6 +37,7 @@ export default function Header() {
     return (
       <Navbar>
         <NavbarBrand>
+          <img className="w-7 mr-2 rounded-full" src={logo} alt="" />
           <p className="font-bold text-inherit">Custom Blog</p>
         </NavbarBrand>
         <NavbarContent justify="end">
