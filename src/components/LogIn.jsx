@@ -32,7 +32,7 @@ function LogIn() {
 
   return (
     <form onSubmit={handleSubmit(submit)}>
-      <div className='flex justify-center items-center'>
+      <div className='flex font-auth justify-center items-center'>
         <div className='p-5 flex flex-col justify-center items-center border border-blue-500 min-h-60 w-1/3 rounded-md'>
           <span className='font-bold text-xl'>Login to your Account</span>
           <span className='text-orange-500'>Don't have an Account?&nbsp;
