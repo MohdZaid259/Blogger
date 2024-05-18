@@ -12,10 +12,10 @@ export default function Header() {
 
   if(authStatus){
     return (
-      <Navbar>
+      <Navbar className="bg-green-200 tracking-wider font-bold font-footer">
         <NavbarBrand>
-          <img className="w-7 mr-2 rounded-full" src={logo} alt="" />
-          <p className="font-bold text-inherit">Custom Blog</p>
+          <img className="w-7 mr-2 rounded-sm " src={logo} alt="" />
+          <p className="font-bold tracking-widest text-inherit">Blogger</p>
         </NavbarBrand>
         <NavbarContent className="sm:flex gap-4" justify="center">
           <NavbarItem>
@@ -37,8 +37,8 @@ export default function Header() {
     return (
       <Navbar>
         <NavbarBrand>
-          <img className="w-7 mr-2 rounded-full" src={logo} alt="" />
-          <p className="font-bold text-inherit">Custom Blog</p>
+          <img className="w-7 mr-2 rounded-sm" src={logo} alt="" />
+          <p className="font-bold text-inherit">Blogger</p>
         </NavbarBrand>
         <NavbarContent justify="end">
           <NavbarItem>

@@ -8,7 +8,7 @@ function PostCard({$id,title,image}) {
   
   return (
     <div className="gap-2">
-        <Card className="border" shadow="sm" key={$id} isPressable onPress={()=>navigate(`/post/${$id}`)}>
+        <Card className="border" shadow="md" key={$id} isPressable onPress={()=>navigate(`/post/${$id}`)}>
           <CardBody className="overflow-visible p-0">
             <Image
               shadow="sm"
@@ -20,7 +20,7 @@ function PostCard({$id,title,image}) {
             />
           </CardBody>
           <CardFooter className="text-small justify-between">
-            <b className="text-lg">{title}</b>
+            <p className="text-xl  font-heading">{title}</p>
           </CardFooter>
         </Card>
     </div>

@@ -10,6 +10,12 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    fontFamily:{
+      content:["Caveat", 'cursive'],
+      heading:["Josefin Sans", 'sans-serif'],
+      footer:["Libre Baskerville", 'serif'],
+      auth:[ "Sora", 'sans-serif']
+    }
   },
   darkMode: "class",
   plugins: [nextui()],

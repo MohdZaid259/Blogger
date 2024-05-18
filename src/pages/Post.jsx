@@ -43,20 +43,20 @@ function Post() {
   }
   const isAuther= post && authData ? post.userId===authData.$id : false
 
-  if(!post) return <>Loading...</> 
+  if(!post) return <div className='text-xl font-bold text-center'>Loading...</div> 
 
   return (
     <Container>
-      <div className='border rounded-lg w-full p-5 grid grid-cols-2'>
+      <div className='border border-black rounded-lg w-full p-5 grid grid-cols-2'>
         <div>
-        <h1 className="text-2xl ml-5 font-bold">{post.title}</h1>
-        <p className='p-5'>{post.content? parse(post.content) :''}</p>
+        <h1 className="text-2xl ml-5 font-bold font-heading">{post.title}</h1>
+        <p className=' font-content text-3xl p-5'>{post.content? parse(post.content) :''}</p>
         </div>
         <div>
         <img className='rounded-lg' src={service.getFilePreview(post.image)} alt={post.title} />
         {isAuther && <>
-        <Link to={`/editpost/${post.$id}`}><Button className='rounded-md bg-black absolute top-16 right-32 text-green-400 border-2 border-green-500 hover:bg-green-800 hover:text-white' variant='solid'>Edit</Button></Link>
-        <Button className='rounded-md absolute top-16 right-10 bg-black border-2 text-red-400 border-red-400 hover:bg-red-700 hover:text-white' onClick={deletePost} variant='solid'>Delete</Button>
+        <Link to={`/editpost/${post.$id}`}><Button className='font-auth rounded-md bg-black absolute top-16 right-32 text-green-400 border-2 border-green-500 hover:bg-green-800 hover:text-white' variant='solid'>Edit</Button></Link>
+        <Button className='font-auth rounded-md absolute top-16 right-10 bg-black border-2 text-red-400 border-red-400 hover:bg-red-700 hover:text-white' onClick={deletePost} variant='solid'>Delete</Button>
         </>}
         </div>
       </div>
