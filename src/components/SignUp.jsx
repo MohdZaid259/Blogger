@@ -20,13 +20,14 @@ function SignUp() {
       setError(error)
     }
   }
+  
   return (
     <form onSubmit={handleSubmit(submit)}>
       <div className='flex font-auth justify-center items-center'>
         <div className='p-5 flex flex-col justify-center items-center border border-blue-500 min-h-60 w-1/3 rounded-md'>
           <span className='font-bold text-xl'>SignUp to create Account</span>
-          <span className='text-orange-500'>Already have an Account?&nbsp;
-            <Link className='text-blue-500' to='/login'>LogIn</Link>
+          <span className='text-gray-500'>Already have an Account?&nbsp;
+            <Link className='hover:underline text-blue-500' to='/login'>LogIn</Link>
           </span>
           {error && <span className='text-red-500'>{error}</span>}
           <div className='flex flex-col gap-1 p-5'>

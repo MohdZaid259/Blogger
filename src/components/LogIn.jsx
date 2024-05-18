@@ -28,15 +28,14 @@ function LogIn() {
       setError(error)
     }
   }
-  console.log(useSelector(state=>state.auth.status)) //checking authStatus
 
   return (
     <form onSubmit={handleSubmit(submit)}>
       <div className='flex font-auth justify-center items-center'>
         <div className='p-5 flex flex-col justify-center items-center border border-blue-500 min-h-60 w-1/3 rounded-md'>
           <span className='font-bold text-xl'>Login to your Account</span>
-          <span className='text-orange-500'>Don't have an Account?&nbsp;
-            <Link className='text-blue-500' to='/signup'>SignUp</Link>
+          <span className='text-gray-500'>Don't have an Account?&nbsp;
+            <Link className='hover:underline text-blue-500' to='/signup'>SignUp</Link>
           </span>
           {error && <span className='text-red-500'>{error}</span>}
           <div className='flex flex-col gap-1 p-5'>

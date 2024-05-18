@@ -33,4 +33,3 @@ optimise the header file
 make the image not required in appwrite
 store for posts
 click postimage to see in full screen
-theme 
