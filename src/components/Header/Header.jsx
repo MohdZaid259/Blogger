@@ -46,7 +46,7 @@ export default function Header() {
     );
   } else {
     return (
-      <Navbar className="bg-teal-400 dark:bg-gray-900 tracking-wider font-bold font-footer">
+      <Navbar className="bg-teal-400 dark:bg-gray-900 tracking-wider font-bold font-footer" style={headerstyle}>
         <NavbarBrand>
           <img className="w-7 mr-2 rounded-sm" src={logo} alt="" />
           <p className="font-bold text-inherit">Blogger</p>
