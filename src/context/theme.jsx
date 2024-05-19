@@ -3,7 +3,7 @@ import React,{createContext,useContext,useEffect,useState} from 'react'
 const themeContext=createContext()
 
 function ThemeProvider({children}) {
-  const [theme,setTheme]=useState(localStorage.getItem('theme') || 'light')
+  const [theme,setTheme]=useState('light')
 
   useEffect(()=>{
     document.querySelector('html').classList.remove("light", "dark")
