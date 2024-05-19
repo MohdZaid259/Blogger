@@ -8,19 +8,14 @@ function Fullscrn() {
 
   useEffect(() => {
     if (fileId) {
-      service.getFilePreview(fileId)
-        .then((data) => {
-          console.log(data)
-        })
-        .catch((err) => {
-          console.error(`Couldn't fetch`, err);
-        });
+      const data=service.getFilePreview(fileId)
+        setImage(data)
     }
   }, [fileId]);
 
   return (
     <div>
-      {image ? <img src={image} alt="File Preview" /> : 'Loading...'}
+      {image ? <img className='' src={image} alt="filepreview" /> : 'Loading...'}
     </div>
   );
 }
