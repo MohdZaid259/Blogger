@@ -25,12 +25,8 @@ post.$id === slug (where?)
 content html-Id issue
 throw and console.log
 
-- Changes :-
-new approach in header file
-
 - Todo :-
 optimise the header file
-store for posts
 
 - Bugs :-
 theme changing on login
