@@ -23,11 +23,11 @@ function App() {
 
     return (
         <div className='flex h-screen w-full flex-col'>
-        <Header/>
-        <main className='flex-1'>
-        {loading ? <div className='text-lg font-bold text-center'>Loading...</div> : <Outlet/>}
-        </main>
-        <Footer/>
+          <Header/>
+          <main className='flex-1 bg-teal-50 dark:bg-gray-800 py-5'>
+            {loading ? <div className='text-lg font-bold text-center'>Loading...</div> : <Outlet/>}
+          </main>
+          <Footer/>
         </div>
   )
 }

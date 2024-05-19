@@ -24,19 +24,20 @@ class AuthService{
         return true
       } return false
     } catch (error) {
-      console.log('Appwrite service :: signUp :: error',error)
+        throw error
     }
   }
 
+
   async logIn({email,password}){
-    try {
-      const session = await this.account.createEmailPasswordSession(
-        email,
-        password
-      )
-      return session
-    } catch (error) {
-      console.log('Appwrite service :: logIn :: error',error)
+    try{
+        const session = await this.account.createEmailPasswordSession(
+          email,
+          password
+        )
+        return session
+    } catch(error){
+        throw error
     }
   }
 

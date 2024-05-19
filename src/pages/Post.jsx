@@ -37,7 +37,7 @@ function Post() {
 
   return (
     <Container>
-      <div className='border border-black rounded-lg w-full p-5 grid grid-cols-2'>
+      <div className='border dark:border-white border-black rounded-lg w-full p-5 grid grid-cols-2'>
         <div>
         <h1 className="text-2xl ml-5 font-bold font-heading">{post.title}</h1>
         <p className=' font-content text-3xl p-5'>{post.content? parse(post.content) :''}</p>
@@ -45,8 +45,8 @@ function Post() {
         <div>
         <Link to={`/fullscrn/${post.image}`}><img className='rounded-lg' src={post.image?service.getFilePreview(post.image):noimage} alt={post.title} /></Link>
         {isAuther && <>
-        <Link to={`/editpost/${post.$id}`}><Button className='font-auth rounded-md bg-black absolute top-16 right-32 text-green-400 border-2 border-green-500 hover:bg-green-800 hover:text-white' variant='solid'>Edit</Button></Link>
-        <Button className='font-auth rounded-md absolute top-16 right-10 bg-black border-2 text-red-400 border-red-400 hover:bg-red-700 hover:text-white' onClick={deletePost} variant='solid'>Delete</Button>
+        <Link to={`/editpost/${post.$id}`}><Button className='font-auth rounded-md dark:shadow-inner dark:shadow-green-400 shadow-inner hover:bg-green-400 shadow-green-400 bg-white dark:bg-black absolute top-20 right-32 text-green-400 border-2 border-green-500 hover:text-white dark:hover:text-white transform transition-transform duration-300 hover:scale-105 ' variant='solid'>Edit</Button></Link>
+        <Button className='font-auth rounded-md absolute top-20 right-10 dark:shadow-inner shadow-inner shadow-red-400 dark:shadow-red-400 bg-white hover:bg-red-400 hover:text-white dark:bg-black border-2 text-red-400 border-red-400 dark:hover:text-white transform transition-transform duration-300 hover:scale-105 ' onClick={deletePost} variant='solid'>Delete</Button>
         </>}
         </div>
       </div>

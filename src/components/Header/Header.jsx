@@ -10,10 +10,13 @@ import { ThemeProvider,Switcher } from '../../context/theme'
 export default function Header() {
   const authStatus=useSelector(state=>state.auth.status)
   const navigate=useNavigate()
+  const headerstyle = {
+    boxShadow: '0 5px 8px rgba(0, 0, 0, 0.4)',
+  };
 
   if(authStatus){
     return (
-      <Navbar className="light:bg-red-500 dark:bg-gray-900 tracking-wider font-bold font-footer">
+      <Navbar className="bg-teal-400 dark:bg-gray-900 tracking-wider font-bold font-footer" style={headerstyle}>
         <NavbarBrand>
           <img className="w-7 mr-2 rounded-sm " src={logo} alt="" />
           <p className="font-bold tracking-widest text-inherit">Blogger</p>
@@ -43,7 +46,7 @@ export default function Header() {
     );
   } else {
     return (
-      <Navbar className="light:bg-green-200 dark:bg-gray-900 tracking-wider font-bold font-footer">
+      <Navbar className="bg-teal-400 dark:bg-gray-900 tracking-wider font-bold font-footer">
         <NavbarBrand>
           <img className="w-7 mr-2 rounded-sm" src={logo} alt="" />
           <p className="font-bold text-inherit">Blogger</p>

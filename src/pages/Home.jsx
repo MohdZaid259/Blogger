@@ -18,6 +18,7 @@ function Home() {
   },[])
 
 return authStatus ? <>
+  {post.length===0?<div className='flex justify-center text-xl font-bold '>Nothing to Read !!!</div>:''}
   <Container>
     {post.map((item)=>(
       <div key={item.$id}>

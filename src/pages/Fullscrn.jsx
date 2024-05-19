@@ -5,6 +5,9 @@ import { useParams } from 'react-router-dom';
 function Fullscrn() {
   const { fileId } = useParams();
   const [image, setImage] = useState(null);
+  const poststyle = {
+    boxShadow: '0 0 10px rgba(0, 0, 0, 0.4)',
+  };
 
   useEffect(() => {
     if (fileId) {
@@ -14,8 +17,8 @@ function Fullscrn() {
   }, [fileId]);
 
   return (
-    <div>
-      {image ? <img className='' src={image} alt="filepreview" /> : 'Loading...'}
+    <div className='flex justify-center items-center w-full'>
+      {image ? <img className='w-4/5' style={poststyle} src={image} alt="filepreview" /> : 'Loading...'}
     </div>
   );
 }
