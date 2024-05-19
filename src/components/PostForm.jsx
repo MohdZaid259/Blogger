@@ -64,16 +64,16 @@ function PostForm({post}) {
   },[watch,slugTransform,setValue])
 
   return (
-    <div className='w-full border border-blue-900 rounded-lg font-auth max-w-3xl mx-auto px-10 py-5'>
+    <div className='w-full border border-blue-900 dark:border-white rounded-lg font-auth max-w-3xl mx-auto px-10 py-10'>
       <form onSubmit={handleSubmit(submit)}>
         <div className="w-full px-2 flex flex-col">
-          <Input className='border rounded p-1 mb-3' label='Title' type="text" {...register('title',{required:true})} />
-          <Input className='border rounded p-1 mb-3 bg-inherit' disabled='disabled' label='Slug' type="text" 
+          <Input className='border w-full rounded p-1 mb-3' label='Title' type="text" {...register('title',{required:true})} />
+          <Input className='border rounded w-full p-1 mb-3 bg-inherit' disabled='disabled' label='Slug' type="text" 
             {...register('slug',{required:true})} />
-          <RTE control={control} label='Content' name='content' defaultValue={getValues('content')}/>
-          <Input className='border rounded p-1 mb-3' label='Image' type='file' {...register('image')}/>
+          <RTE control={control} className='mt-5' label='Content' name='content' defaultValue={getValues('content')}/>
+          <div className='my-5'><Input className='border rounded w-full p-1' label='Image' type='file' {...register('image')}/></div>
           {post && <img src={post.image} alt={post.title} className='rounded-lg'/>}
-          <Button className='font-bold text-lg' type='submit' color='primary'>{post?'Update':'Publish'}</Button>
+          <Button className='font-bold rounded-md tracking-wider text-lg' type='submit' color='primary'>{post?'Update':'Publish'}</Button>
         </div>
       </form>
     </div>

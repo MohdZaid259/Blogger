@@ -10,10 +10,10 @@ function Input({
   const id=useId()
 
   return (
-    <>
-    {label  && <label htmlFor={id} className=''>{label}</label>}
+    <div className='flex'>
+    {label  && <label htmlFor={id} className='mr-5 pt-1'>{label}</label>}
     <input type={type} placeholder={placeholder} ref={ref} id={id} className={` ${classname}`} {...props}></input>
-    </>
+    </div>
   )
 }
 
