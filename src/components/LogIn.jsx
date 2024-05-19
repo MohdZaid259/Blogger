@@ -39,9 +39,9 @@ function LogIn() {
             <Link className='hover:underline text-blue-500' to='/signup'>SignUp</Link>
           </span>
           {error && <span className='mt-2 text-xs text-red-500'>{error}</span>}
-          <div className='flex flex-col gap-1 p-5'>
-            <Input type="text" label='Email' className='border rounded p-1' {...register('email',{required:true})}/>
-            <Input type="password" label='Password' className='border rounded p-1' {...register('password',{required:true})}/>
+          <div className='flex flex-col gap-4 p-5'>
+            <Input type="text" label='Email' className='border ml-16 rounded p-1' {...register('email',{required:true})}/>
+            <Input type="password" label='Password' className='border ml-7 rounded p-1' {...register('password',{required:true})}/>
             <Button type='submit' color='primary' className='w-20 m-auto bg-blue-500 mt-4 p-1 rounded-md'>Submit</Button>
           </div>
         </div>
