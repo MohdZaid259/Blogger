@@ -13,7 +13,6 @@ function LogOut() {
     await authService.logOut()
     dispatch(authLogout())
     navigate('/')
-    console.log('done')
   }
     return <Button color="primary" variant="ghost" onClick={submit}>Logout</Button>    
 }

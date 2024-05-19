@@ -2,13 +2,14 @@ import React from "react";
 import {Card, CardBody, CardFooter, Image} from "@nextui-org/react";
 import service from '../Appwrite/config'
 import { useNavigate } from "react-router-dom";
+import noimage from '../Media/noimage.png'
 
 function PostCard({$id,title,image}) {
   const navigate=useNavigate()
   
   return (
     <div className="gap-2">
-        <Card className="border" shadow="md" key={$id} isPressable onPress={()=>navigate(`/post/${$id}`)}>
+        <Card className="border border-blue-900" shadow="md" key={$id} isPressable onPress={()=>navigate(`/post/${$id}`)}>
           <CardBody className="overflow-visible p-0">
             <Image
               shadow="sm"
@@ -16,7 +17,7 @@ function PostCard({$id,title,image}) {
               width="100%"
               alt={title}
               className="w-full object-cover rounded-none h-[140px]"
-              src={service.getFilePreview(image)}
+              src={image?service.getFilePreview(image):noimage}
             />
           </CardBody>
           <CardFooter className="text-small justify-between">

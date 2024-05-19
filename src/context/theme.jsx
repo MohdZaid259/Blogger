@@ -6,8 +6,8 @@ function ThemeProvider({children}) {
   const [theme,setTheme]=useState(localStorage.getItem('theme') || 'light')
 
   useEffect(()=>{
-    document.documentElement.setAttribute('data-theme',theme)
-    localStorage.setItem('theme',theme)
+    document.querySelector('html').classList.remove("light", "dark")
+    document.querySelector('html').classList.add(theme)
   },[theme])
 
   function toggle(){

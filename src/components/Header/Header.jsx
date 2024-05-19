@@ -13,7 +13,7 @@ export default function Header() {
 
   if(authStatus){
     return (
-      <Navbar className="light:bg-green-200 dark:bg-green-900 tracking-wider font-bold font-footer">
+      <Navbar className="light:bg-red-500 dark:bg-gray-900 tracking-wider font-bold font-footer">
         <NavbarBrand>
           <img className="w-7 mr-2 rounded-sm " src={logo} alt="" />
           <p className="font-bold tracking-widest text-inherit">Blogger</p>
@@ -43,7 +43,7 @@ export default function Header() {
     );
   } else {
     return (
-      <Navbar className="light:bg-green-200 dark:bg-green-900 tracking-wider font-bold font-footer">
+      <Navbar className="light:bg-green-200 dark:bg-gray-900 tracking-wider font-bold font-footer">
         <NavbarBrand>
           <img className="w-7 mr-2 rounded-sm" src={logo} alt="" />
           <p className="font-bold text-inherit">Blogger</p>

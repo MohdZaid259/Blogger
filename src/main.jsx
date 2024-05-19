@@ -13,6 +13,7 @@ import Home from "./pages/Home";
 import EditPost from "./pages/EditPost";
 import Post from './pages/Post';
 import MyPost from './pages/MyPost'
+import Fullscrn from "./pages/Fullscrn";
 
 const router=createBrowserRouter(
   createRoutesFromElements(
@@ -22,6 +23,7 @@ const router=createBrowserRouter(
       <Route path="editpost/:slug" element={<EditPost/>}/>
       <Route path="mypost" element={<MyPost/>}/>
       <Route path="post/:slug" element={<Post/>}/>
+      <Route path="fullscrn/:fileId" element={<Fullscrn/>}/>
       <Route path="login" element={<LogIn/>}/>
       <Route path="signup" element={<SignUp/>}/>
     </Route>
@@ -30,7 +32,7 @@ const router=createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Provider store={store}>
-      <NextUIProvider>
+      <NextUIProvider className="w-full h-full">
         <RouterProvider router={router}/>
       </NextUIProvider>
   </Provider>

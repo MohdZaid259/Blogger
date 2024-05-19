@@ -22,11 +22,13 @@ function App() {
   },[])
 
     return (
-        <>
+        <div className='flex h-screen w-full flex-col'>
         <Header/>
+        <main className='flex-1'>
         {loading ? <div className='text-lg font-bold text-center'>Loading...</div> : <Outlet/>}
+        </main>
         <Footer/>
-        </>
+        </div>
   )
 }
 
