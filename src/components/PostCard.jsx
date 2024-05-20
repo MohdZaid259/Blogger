@@ -13,7 +13,7 @@ function PostCard({ $id, title, image }) {
   return (
     <div className="gap-2">
       <Card
-        className="border border-blue-900 transform transition-transform duration-300 hover:scale-105"
+        className=" border border-blue-900 transform transition-transform duration-300 hover:scale-105"
         style={cardstyle}
         shadow="md"
         key={$id}

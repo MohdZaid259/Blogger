@@ -64,7 +64,7 @@ function PostForm({post}) {
   },[watch,slugTransform,setValue])
 
   return (
-    <div className='w-full border border-blue-900 dark:border-white rounded-lg font-auth max-w-3xl mx-auto px-10 py-10'>
+    <div className='w-full border border-blue-900 dark:border-white rounded-lg font-auth max-w-3xl mx-auto p-2 pt-5 sm:p-3 sm:pt-5 md:p-5 lg:p-10'>
       <form onSubmit={handleSubmit(submit)}>
         <div className="w-full px-2 flex flex-col">
           <Input className='border ml-5 w-full rounded p-1 mb-3' label='Title' type="text" {...register('title',{required:true})} />

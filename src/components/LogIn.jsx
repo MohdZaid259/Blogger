@@ -33,13 +33,13 @@ function LogIn() {
   return (
     <form className='flex flex-1 h-full flex-col justify-center' onSubmit={handleSubmit(submit)}>
       <div className='flex font-auth justify-center items-center'>
-        <div className='p-5 flex flex-col justify-center items-center border border-blue-500 min-h-60 w-1/3 rounded-md'>
-          <span className='font-bold text-xl'>Login to your Account</span>
-          <span className='text-gray-500'>Don't have an Account?&nbsp;
+        <div className='p-5 flex flex-col justify-center items-center border border-blue-500 max-w-md min-h-60 w-4/5 rounded-md'>
+          <span className='font-bold text-lg sm:text-xl'>Login to your Account</span>
+          <span className='text-gray-500 text-sm sm:text-md'>Don't have an Account?&nbsp;
             <Link className='hover:underline text-blue-500' to='/signup'>SignUp</Link>
           </span>
           {error && <span className='mt-2 text-xs text-red-500'>{error}</span>}
-          <div className='flex flex-col gap-4 p-5'>
+          <div className='flex flex-col gap-4 p-5 pb-3'>
             <Input type="text" label='Email' className='border ml-16 rounded p-1' {...register('email',{required:true})}/>
             <Input type="password" label='Password' className='border ml-7 rounded p-1' {...register('password',{required:true})}/>
             <Button type='submit' color='primary' className='w-20 m-auto bg-blue-500 mt-4 p-1 rounded-md'>Submit</Button>

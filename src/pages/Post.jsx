@@ -37,10 +37,10 @@ function Post() {
 
   return (
     <Container>
-      <div className='border dark:border-white border-black rounded-lg w-full p-5 grid grid-cols-2'>
+      <div className='border dark:border-white border-black p-3 rounded-lg w-full flex flex-col-reverse md:p-5 lg:grid lg:grid-cols-2'>
         <div>
-        <h1 className="text-2xl ml-5 font-bold font-heading">{post.title}</h1>
-        <p className=' font-content text-3xl p-5'>{post.content? parse(post.content) :''}</p>
+        <h1 className="text-lg md:text-2xl lg:text-3xl xl:text-3xl mt-5 md:m-5 md:mb-3 font-bold font-heading">{post.title}</h1>
+        <p className='p-0 font-content text-md md:text-xl lg:text-2xl xl:text-3xl md:p-5 md:pt-0'>{post.content? parse(post.content) :''}</p>
         </div>
         <div>
         <Link to={`/fullscrn/${post.image}`}><img className='rounded-lg' src={post.image?service.getFilePreview(post.image):noimage} alt={post.title} /></Link>

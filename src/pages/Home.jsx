@@ -26,7 +26,7 @@ return authStatus ? <>
       </div>
     ))}
   </Container>
-  </> : <span className='flex justify-center text-xl font-bold '>Login to Read Posts !!!</span> 
+  </> : <span className='flex justify-center text-xl font-bold '>Login/Signup to Read !!!</span> 
 }
 
 export default Home
