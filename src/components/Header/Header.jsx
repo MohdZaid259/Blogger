@@ -54,13 +54,13 @@ export default function Header() {
           <NavbarContent justify="center">
             <div onClick={handleHam} className="sm:hidden">
               {ham ? (
-                <img className="w-4 rounded-sm " src={close} alt="close" />
+                <img className="dark:invert w-4 rounded-sm " src={close} alt="close" />
               ) : (
-                <img className="w-7 rounded-sm " src={menu} alt="menu" />
+                <img className="dark:invert w-7 rounded-sm " src={menu} alt="menu" />
               )}
             </div>
-            <ul
-              className={`bg-teal-100 sm:text-base sm:bg-transparent w-auto rounded-lg sm:rounded-none py-5 px-6 sm:p-0 absolute sm:static top-16 right-4 ${
+            <ul onClick={handleHam}
+              className={`bg-teal-100 sm:text-base dark:text-black sm:bg-transparent w-auto rounded-lg sm:rounded-none py-5 px-6 sm:p-0 absolute sm:static top-16 right-4 ${
                 ham
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 sm:opacity-100 -translate-y-[140%] sm:translate-y-0"

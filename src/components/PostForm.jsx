@@ -68,7 +68,7 @@ function PostForm({post}) {
       <form onSubmit={handleSubmit(submit)}>
         <div className="w-full px-2 flex flex-col">
           <Input className='border ml-5 w-full rounded p-1 mb-3' label='Title' type="text" {...register('title',{required:true})} />
-          <Input className='border ml-5 rounded w-full p-1 mb-3 bg-inherit' disabled='disabled' label='Slug' type="text" 
+          <Input className='border ml-5 rounded w-full p-1 mb-3' disabled='disabled' label='Slug' type="text" 
             {...register('slug',{required:true})} />
           <RTE control={control} className='mt-5' label='Content' name='content' defaultValue={getValues('content')}/>
           <div className='my-5'><Input className='border ml-5 rounded w-full p-1' label='Image' type='file' {...register('image')}/></div>
