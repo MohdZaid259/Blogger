@@ -14,7 +14,7 @@ function LogOut() {
     dispatch(authLogout())
     navigate('/')
   }
-    return <Button color="primary" variant="ghost" onClick={submit}>Logout</Button>    
+    return <Button className='font-bold' color="primary" variant="ghost" onClick={submit}>Logout</Button>    
 }
 
 export default LogOut
