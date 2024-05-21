@@ -5,7 +5,6 @@ import Footer from './components/Footer/Footer'
 import authService from './Appwrite/auth'
 import { useDispatch } from 'react-redux'
 import { login,logout } from './Store/authSlice'
-import Ham from './components/Header/Ham'
 
 function App() {
   const [loading,setLoading]=useState(true)
@@ -25,7 +24,6 @@ function App() {
     return (
         <div className='flex h-screen w-full flex-col'>
           <Header/>
-          {/* <Ham/> */}
           <main className='flex-1 bg-teal-50 dark:bg-gray-800 py-5'>
             {loading ? <div className='text-lg font-bold text-center'>Loading...</div> : <Outlet/>}
           </main>
