@@ -60,7 +60,7 @@ export default function Header() {
               )}
             </div>
             <ul onClick={handleHam}
-              className={`bg-teal-100 sm:text-base dark:text-black sm:bg-transparent w-auto rounded-lg sm:rounded-none py-5 px-6 sm:p-0 absolute sm:static top-16 right-4 ${
+              className={`bg-teal-100 sm:text-base dark:text-black sm:dark:text-white sm:bg-transparent w-auto rounded-lg sm:rounded-none py-5 px-6 sm:p-0 absolute sm:static top-16 right-4 ${
                 ham
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 sm:opacity-100 -translate-y-[140%] sm:translate-y-0"
