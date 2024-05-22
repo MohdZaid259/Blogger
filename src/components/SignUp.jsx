@@ -24,7 +24,7 @@ function SignUp() {
   return (
     <form className='flex flex-1 h-full flex-col justify-center' onSubmit={handleSubmit(submit)}>
       <div className='flex font-auth justify-center items-center'>
-        <div className='py-5 flex flex-col justify-center items-center border border-blue-500 max-w-md min-h-60 w-4/5 rounded-md'>
+        <div className='py-5 flex flex-col justify-center items-center border border-blue-500 max-w-md min-h-60 w-full rounded-md mx-5 '>
           <span className='font-bold text-lg sm:text-xl'>SignUp to create Account</span>
           <span className='text-gray-500 text-sm sm:text-md'>Already have an Account?&nbsp;
             <Link className='hover:underline text-blue-500' to='/login'>LogIn</Link>
@@ -33,7 +33,7 @@ function SignUp() {
           <div className='flex flex-col gap-4 pt-5 pb-3'>
             <Input type="text" label='Name' className='border ml-11 rounded p-1' {...register('name',{required:true})}/>
             <Input type="text" label='Email' className='border ml-12 rounded p-1' {...register('email',{required:true})}/>
-            <Input type="password" label='Password' className='border ml-3 rounded p-1' {...register('password',{required:true})}/>
+            <Input type="password" label='Password' className='border ml-3  rounded p-1' {...register('password',{required:true})}/>
             <Button type='submit' color='primary' className='w-20 m-auto bg-blue-500 mt-4 p-1 rounded-md'>Submit</Button>
           </div>
         </div>
