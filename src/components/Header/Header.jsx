@@ -64,7 +64,7 @@ export default function Header() {
                 ham
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 sm:opacity-100 -translate-y-[140%] sm:translate-y-0"
-              } flex flex-col sm:flex-row items-end sm:items-center gap-3 sm:gap-4 sm:text-lg transition-all duration-150 ease-in-out`}
+              } flex flex-col sm:flex-row items-end sm:items-center gap-3 sm:gap-6 sm:text-lg transition-all duration-150 ease-in-out`}
             >
             {navItems.map((item)=>item.status?(
               <NavLink key={item.slug} className={({isActive})=>`${isActive?'text-blue-500':''} hover:underline underline-offset-4`} to={item.slug}>{item.name}</NavLink>

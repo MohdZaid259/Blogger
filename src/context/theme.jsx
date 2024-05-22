@@ -1,4 +1,5 @@
 import React,{createContext,useContext,useEffect,useState} from 'react'
+import brightness from '../Media/brightness.png'
 
 const themeContext=createContext()
 
@@ -21,7 +22,12 @@ function ThemeProvider({children}) {
 function Switcher(){
   const {theme,toggle}=useContext(themeContext)
 
-  return <button className='text-2xl' onClick={toggle}>{theme==='light'?'☀️':'🌙'}</button>
+  return (
+    <button className='text-2xl ml-3' onClick={toggle}>
+      {theme==='light'?<img className='w-7 ' src={brightness}/>:<img className='w-7 invert' src={brightness}/>}
+    </button>
+  )
+  
 }
 
 export {ThemeProvider,Switcher}
