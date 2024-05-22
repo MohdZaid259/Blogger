@@ -67,7 +67,7 @@ export default function Header() {
               } flex flex-col sm:flex-row items-end sm:items-center gap-3 sm:gap-4 sm:text-lg transition-all duration-150 ease-in-out`}
             >
             {navItems.map((item)=>item.status?(
-              <NavLink className={({isActive})=>`${isActive?'text-blue-500':''} hover:underline underline-offset-4`} to={item.slug}>{item.name}</NavLink>
+              <NavLink key={item.slug} className={({isActive})=>`${isActive?'text-blue-500':''} hover:underline underline-offset-4`} to={item.slug}>{item.name}</NavLink>
             ):null)}
             {authStatus && <LogOut/>}
             </ul>

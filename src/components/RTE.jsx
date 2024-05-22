@@ -1,5 +1,4 @@
 import React from 'react';
-// import { forwardRef } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 import { Controller } from 'react-hook-form';
 import { useId } from 'react';
@@ -13,6 +12,13 @@ function RTE({
   ...props
 }) {
   const id=useId()
+  const [charCount, setCharCount] = React.useState(0);
+
+  const handleChange = (value) => {
+    if (value.length <= 512) {
+      setCharCount(value.length);
+    }
+  };
 
   return (
     <div className=''>
@@ -31,10 +37,11 @@ function RTE({
         }}
         className={`${className}`}
         {...props}
-        onEditorChange={onChange}
+        onEditorChange={onChange && handleChange}
         />
       )}
       />
+      {(500-charCount)>0?<div className='text-gray-500 text-sm ml-1 '>{500-charCount} characters remaining</div>:<div className='text-red-500 text-sm'> limit exceeded !!</div>}
     </div>
   );
 }

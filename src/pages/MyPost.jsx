@@ -12,13 +12,13 @@ function MyPost() {
       .then((user)=>{
         user?setUser(user):''
       }).catch((err)=>{
-        console.log(`Couldn't fetch userData `,err)
+        throw err
       })
     service.getAllPost()
       .then((posts)=>{
         posts?setposts(posts.documents):null
       }).catch((err)=>{
-        console.log(`Couldn't fetch Posts `,err)
+        throw err
       })
   },[])
 
