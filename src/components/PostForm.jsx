@@ -12,15 +12,16 @@ function PostForm({post}) {
   const { register, handleSubmit, watch, control, setValue, getValues } =
     useForm({
       defaultValues: {
-        title: post?.title || "",
-        slug: post?.slug || "",
-        content: post?.content || "",
+        title: post?.title ,
+        slug: post?.slug ,
+        content: post?.content 
       }
     });
   const navigate = useNavigate();
   const userData = useSelector((state) => state.auth.userData);
 
   const submit = async (data) => {
+    console.log(data)
     try {
       if (post) {
         const file = data.image[0] ? await service.uploadFile(data.image[0]) : noimage

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 import { Controller } from 'react-hook-form';
-import { useId } from 'react';
 
 function RTE({
   name,
@@ -11,7 +10,6 @@ function RTE({
   className='',
   ...props
 }) {
-  const id=useId()
   const [charCount, setCharCount] = React.useState(0);
 
   const handleChange = (value) => {
@@ -22,13 +20,12 @@ function RTE({
 
   return (
     <div className=''>
-      {label  && <label htmlFor={id} className=''>{label}</label>}    
+      {label  && <label className=''>{label}</label>}    
       <Controller
       name={name || 'content'}
       control={control} 
       render={({field:{onChange}})=>(
         <Editor
-        id={id}
         initialValue={defaultValue}
         apiKey='ohiyqf932zaevp1kwrzetil36x86zcddhzj90j7qlwc6e4fg'
         init={{

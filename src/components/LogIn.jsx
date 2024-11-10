@@ -34,7 +34,7 @@ function LogIn() {
       <div className='flex font-auth justify-center items-center'>
         <div className='p-5 flex flex-col justify-center items-center border border-blue-500 max-w-md min-h-60 w-4/5 rounded-md'>
           <span className='font-bold text-lg sm:text-xl'>Login to your Account</span>
-          <span className='text-gray-500 text-sm sm:text-md'>Don't have an Account?&nbsp;
+          <span className='text-gray-500 text-sm sm:text-md'>Don&apos;t have an Account?&nbsp;
             <Link className='hover:underline text-blue-500' to='/signup'>SignUp</Link>
           </span>
           {error && <span className='mt-2 text-xs text-red-500'>{error}</span>}

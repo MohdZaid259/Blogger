@@ -26,7 +26,7 @@ function MyPost() {
     <Container>
       {posts.map((item)=>{
         if(item.userId == user.$id){
-          return <PostCard {...item}/>
+          return <div key={item.$id}><PostCard {...item}/></div>
         }
       })}
     </Container>
